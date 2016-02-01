@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Was.ViewScripts")]
+[assembly: AssemblyTitle("Was.ViewScripts.Test")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Was.ViewScripts")]
+[assembly: AssemblyProduct("Was.ViewScripts.Test")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,9 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("48676b16-aaf2-4957-9763-6afd8c3b3d30")]
-
-[assembly: InternalsVisibleTo("Was.ViewScripts.Test")]
+[assembly: Guid("20c9d783-57b9-42c8-b434-4a1dbf2886c6")]
 
 // Version information for an assembly consists of the following four values:
 //

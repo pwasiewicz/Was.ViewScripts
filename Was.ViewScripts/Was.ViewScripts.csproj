@@ -69,6 +69,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\Graph.cs" />
     <Compile Include="Helpers\ReadyScriptBlock.cs" />
     <Compile Include="Helpers\ScriptBlock.cs" />
     <Compile Include="HtmlHelperViewScripts.cs" />
