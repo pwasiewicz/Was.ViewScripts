@@ -1,5 +1,6 @@
 # Was.ViewScripts
 A simple helper for rendering scripts on razor views.
+Available via nuget.
 
 # Usage
 
