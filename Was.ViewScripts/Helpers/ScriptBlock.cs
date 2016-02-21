@@ -6,44 +6,31 @@
     using System.Web;
     using System.Web.Mvc;
 
-    internal class ScriptBlock : IKeyedScriptBlockOptions
+    internal class ScriptBlock : Block<ReadyScriptBlock>, IKeyedScriptBlockOptions
     {
-        private const string ScriptsKey = "was-viewscripts-scripts";
+        private const string ContextKey = "was-viewscripts-scripts";
 
-        public string Key { get; private set; }
-        public bool IsUnique { get; private set; }
-
-        public static List<ReadyScriptBlock> PageScripts
-        {
-            get
-            {
-                if (HttpContext.Current.Items[ScriptsKey] == null)
-                    HttpContext.Current.Items[ScriptsKey] = new List<ReadyScriptBlock>();
-                return (List<ReadyScriptBlock>)HttpContext.Current.Items[ScriptsKey];
-            }
-        }
-
-        private readonly WebViewPage _webPageBase;
-
+        
         public ScriptBlock(WebViewPage webPageBase)
+            : base(webPageBase)
         {
-            this._webPageBase = webPageBase;
-            this._webPageBase.OutputStack.Push(new StringWriter());
         }
+
+        public static List<ReadyScriptBlock> Scripts => Blocks(ContextKey);
 
         public void Dispose()
         {
-            var blockvalue = ((StringWriter) this._webPageBase.OutputStack.Pop()).ToString();
+            var blockvalue = ((StringWriter) this.WebPageBase.OutputStack.Pop()).ToString();
 
             if (this.IsUnique)
             {
-                if (PageScripts.Any(sc => sc.Key == this.Key))
+                if (Scripts.Any(sc => sc.Key == this.Key))
                 {
                     return;
                 }
             }
 
-            PageScripts.Add(new ReadyScriptBlock
+            Scripts.Add(new ReadyScriptBlock
             {
                 Value = blockvalue,
                 Key = this.Key

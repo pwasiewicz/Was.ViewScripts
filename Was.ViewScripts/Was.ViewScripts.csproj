@@ -69,11 +69,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\Block.cs" />
     <Compile Include="Helpers\Graph.cs" />
+    <Compile Include="Helpers\ReadyBlock.cs" />
     <Compile Include="Helpers\ReadyScriptBlock.cs" />
+    <Compile Include="Helpers\ReadyStyleBlock.cs" />
     <Compile Include="Helpers\ScriptBlock.cs" />
+    <Compile Include="Helpers\StyleBlock.cs" />
     <Compile Include="HtmlHelperViewScripts.cs" />
     <Compile Include="IScriptBlockOptions.cs" />
+    <Compile Include="IStyleBlockOptions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

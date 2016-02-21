@@ -12,9 +12,19 @@
             return new ScriptBlock((WebViewPage)helper.ViewDataContainer);
         }
 
+        public static IScriptBlockOptions BeginStyles(this HtmlHelper helper)
+        {
+            return new ScriptBlock((WebViewPage)helper.ViewDataContainer);
+        }
+
         public static MvcHtmlString PageScripts(this HtmlHelper helper)
         {
-            return MvcHtmlString.Create(string.Join(Environment.NewLine, ScriptBlock.PageScripts.Select(s => s.Value)));
+            return MvcHtmlString.Create(string.Join(Environment.NewLine, ScriptBlock.Scripts.Select(s => s.Value)));
+        }
+
+        public static MvcHtmlString PageStyles(this HtmlHelper helper)
+        {
+            return MvcHtmlString.Create(string.Join(Environment.NewLine, StyleBlock.Styles.Select(s => s.Value)));
         }
     }
 }
