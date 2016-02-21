@@ -79,4 +79,5 @@ Now, you can add scripts anywhere in your views (including partial views):
 # Changelog
 
 1.0:   First release
+
 1.0.1: Styles support
