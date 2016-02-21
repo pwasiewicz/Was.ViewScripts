@@ -20,11 +20,71 @@ Put the following render commands in a layout cshtml
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     
+    @Html.PageStyles() @* render styles  here *@
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
+
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+# Usage
+Put the following render commands in a layout cshtml
+```c#
+@using Was.ViewScripts
+@* you can also put namespace int web.config  *@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    
+    @Html.PageStyles() @* render styles  here *@
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -66,5 +126,10 @@ Now, you can add scripts anywhere in your views (including partial views):
     <script type="text/javscript">
         // some scripts
     </script?
+}
+
+@using (Html.BeginStyles())
+{
+    @Styles.Render("~/Content/SomeCssBundle")
 }
 ```
